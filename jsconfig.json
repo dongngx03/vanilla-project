@@ -1,0 +1,12 @@
+// tạo file config.json
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "baseUrl": "./src",
+        "paths": {
+            "@/*":["*"]
+        }
+    },
+    "exclude": ["node_modules"]
+}
