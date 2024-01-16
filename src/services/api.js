@@ -8,7 +8,7 @@ const signUp = async (name, email, pw) => {
 
         const check = await axios.get(`${api_base}/users?email=${email}`);
         console.log(check);
-        if(check.data.length > 0) {
+        if (check.data.length > 0) {
             return false
         }
 
@@ -36,4 +36,21 @@ const getUsers = async () => {
     }
 }
 
-export {signUp, getUsers}
+const getOneUser = async (email) => {
+    try {
+        // tìm email 
+        const check = await fetch(`${api_base}/users?email=${email}`);
+
+        const data = await check.json();
+        if (data.length >0) {
+            return data
+        } else {
+            return false
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export { signUp, getUsers, getOneUser }

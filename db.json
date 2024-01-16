@@ -4,49 +4,79 @@
       "id": "1",
       "name": "Đông nguyễn",
       "email": "dong@gmail.com",
-      "pw": "123456789"
+      "pw": "123456789",
+      "rule" : "member"
     },
     {
       "id": "519a",
       "name": "huy",
       "email": "huy@gmail.com",
-      "pw": "123456789"
+      "pw": "123456789",
+      "rule" : "member"
     },
     {
       "id": "a2a4",
       "name": "hiền",
       "email": "hien@gmail.com",
-      "pw": "123456789"
+      "pw": "123456789",
+      "rule" : "member"
     },
     {
       "id": "5c77",
       "name": "nguyễn đông",
       "email": "dong111@gmail.com",
-      "pw": "123456789"
+      "pw": "123456789",
+      "rule" : "member"
     },
     {
       "id": "b8f1",
       "name": "phương ",
       "email": "phuong@gmail.com",
-      "pw": "123456789"
+      "pw": "123456789",
+      "rule" : "member"
     },
     {
       "id": "9e88",
       "name": "đông ngueyenx ",
       "email": "111@gmail.com",
-      "pw": "123456789"
-    },
-    {
-      "id": "fe7b",
-      "name": "đông ngueyenx ",
-      "email": "dong@gmail.com",
-      "pw": "123456789"
+      "pw": "123456789",
+      "rule" : "member"
     },
     {
       "id": "a4e9",
       "name": "thịnh nguyễn ",
       "email": "thinh@gmail.com",
-      "pw": "123456789"
+      "pw": "123456789",
+      "rule" : "member"
+    }
+  ],
+  "type": [
+    {
+      "id" : "1",
+      "name" : "mac"
+    },
+    {
+      "id" : "2",
+      "name" : "iphone"
+    }
+  ],
+  "product" : [
+    {
+      "id" : "1",
+      "name" : "sản phẩm 1",
+      "desc" : "sản phẩm tốt ",
+      "price" : "50",
+      "type" : "iphone",
+      "img" : "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693086290312",
+      "technical" : {
+        "screen" : "6.7 inch, OLED, Super Retina XDR, 2796 x 1290 Pixels",
+        "cameraBefore": "48.0 MP + 12.0 MP + 12.0 MP",
+        "Camera Selfie" : "12.0 MP",
+        "RAM" : "8 GB",
+        "Memory" : "256 GB",
+        "CPU" : "Apple A17 Pro",
+        "battery" : "29h"
+      }
     }
   ]
 }
