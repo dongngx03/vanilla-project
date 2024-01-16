@@ -3,9 +3,9 @@ const Header = () => {
     return /*html */`
         <Header class="tw-w-full tw-h-[50px] tw-bg-[#F5F5F7] d-flex tw-justify-between">
             <div class="tw-h-full d-flex justify-content-center align-items-center tw-pl-28 tw-gap-9">
-                <button><i class="fa-brands fa-apple fa-lg"></i></button>
-                <a href="" class="text-decoration-none tw-text-black">Iphone</a>
-                <a href="" class="text-decoration-none tw-text-black">Mac</a>
+                <a href="/" data-navigo class="text-dark"><i class="fa-brands fa-apple fa-lg"></i></a>
+                <a href="/signin" data-navigo  class="text-decoration-none tw-text-black">Iphone</a>
+                <a href="/signup" data-navigo class="text-decoration-none tw-text-black">Mac</a>
                 <a href="" class="text-decoration-none tw-text-black">Watch</a>
                 <a href="" class="text-decoration-none tw-text-black">AirPods</a>
             </div>

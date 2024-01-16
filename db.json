@@ -63,19 +63,36 @@
   "product" : [
     {
       "id" : "1",
-      "name" : "sản phẩm 1",
-      "desc" : "sản phẩm tốt ",
-      "price" : "50",
+      "name" : "iPhone 15 Pro Max 256GB",
+      "desc" : "iPhone 15 Pro Max có gì mới? Thiết kế titan chuẩn hàng không vũ trụ iPhone 15 Pro Max thể hiện đẳng cấp ngay từ vẻ bề ngoài với khung viền bằng titan bóng bẩy, tinh tế, đẹp một cách sang trọng. Apple đã mất rất nhiều quy trình gia công cơ khí, chà nhám, đánh bóng và phun mài để tạo nên một chất liệu vừa đẹp, vừa bền, lại rất nhẹ. Phần khung iPhone 15 Pro Max còn được uốn cong, kết hợp với kiểu dáng siêu mỏng giúp hoàn hảo trong lòng bàn tay Nói qua một chút về khung viền titan trên iPhone 15 Pro Max, phần khung sườn được làm từ 100% nhôm tái chế, đảm bảo nhẹ và thân thiện với môi trường. Phần viền titan sẽ được gắn với khung sườn nhôm bằng công nghệ khuếch tán trạng thái rắn, sử dụng quy trình nhiệt cơ khí để nối hai vật liệu kim loại lại với nhau, tạo độ bền chắc hoàn hảo. Bạn sẽ có chiếc iPhone bản Pro Max nhẹ nhất từ trước đến nay, thoải mái để cầm trên tay và sử dụng trong thời gian dài.Màn hình Super Retina XDR tiên tiến siêu mượtTrải nghiệm hình ảnh trên iPhone 15 Pro Max hết sức ấn tượng về cả chất lượng hiển thị lẫn độ mượt mà. Công nghệ Super Retina XDR kích thước lớn tới 6,7 inch OLED, độ phân giải 2796x1290 pixel với mật độ điểm ảnh 460 ppi siêu nét, tái hiện mọi thứ một cách sống động đáng kinh ngạc. Công nghệ ProMotion với tốc độ làm mới lên tới 120Hz, có thể thay đổi linh hoạt, giúp các thao tác vuốt chạm luôn luôn mượt mà, đồng thời vẫn đảm bảo tiết kiệm pin.",
+      "price" : "33190000",
       "type" : "iphone",
       "img" : "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693086290312",
       "technical" : {
         "screen" : "6.7 inch, OLED, Super Retina XDR, 2796 x 1290 Pixels",
         "cameraBefore": "48.0 MP + 12.0 MP + 12.0 MP",
-        "Camera Selfie" : "12.0 MP",
+        "CameraSelfie" : "12.0 MP",
         "RAM" : "8 GB",
         "Memory" : "256 GB",
         "CPU" : "Apple A17 Pro",
-        "battery" : "29h"
+        "battery" : "29 Giờ"
+      }
+    },
+    {
+      "id" : "2",
+      "name" : "iPhone 15 128GB",
+      "desc" : "iPhone 15 Pro Max có gì mới? Thiết kế titan chuẩn hàng không vũ trụ iPhone 15 Pro Max thể hiện đẳng cấp ngay từ vẻ bề ngoài với khung viền bằng titan bóng bẩy, tinh tế, đẹp một cách sang trọng. Apple đã mất rất nhiều quy trình gia công cơ khí, chà nhám, đánh bóng và phun mài để tạo nên một chất liệu vừa đẹp, vừa bền, lại rất nhẹ. Phần khung iPhone 15 Pro Max còn được uốn cong, kết hợp với kiểu dáng siêu mỏng giúp hoàn hảo trong lòng bàn tay Nói qua một chút về khung viền titan trên iPhone 15 Pro Max, phần khung sườn được làm từ 100% nhôm tái chế, đảm bảo nhẹ và thân thiện với môi trường. Phần viền titan sẽ được gắn với khung sườn nhôm bằng công nghệ khuếch tán trạng thái rắn, sử dụng quy trình nhiệt cơ khí để nối hai vật liệu kim loại lại với nhau, tạo độ bền chắc hoàn hảo. Bạn sẽ có chiếc iPhone bản Pro Max nhẹ nhất từ trước đến nay, thoải mái để cầm trên tay và sử dụng trong thời gian dài.Màn hình Super Retina XDR tiên tiến siêu mượtTrải nghiệm hình ảnh trên iPhone 15 Pro Max hết sức ấn tượng về cả chất lượng hiển thị lẫn độ mượt mà. Công nghệ Super Retina XDR kích thước lớn tới 6,7 inch OLED, độ phân giải 2796x1290 pixel với mật độ điểm ảnh 460 ppi siêu nét, tái hiện mọi thứ một cách sống động đáng kinh ngạc. Công nghệ ProMotion với tốc độ làm mới lên tới 120Hz, có thể thay đổi linh hoạt, giúp các thao tác vuốt chạm luôn luôn mượt mà, đồng thời vẫn đảm bảo tiết kiệm pin.",
+      "price" : "22000000",
+      "type" : "iphone",
+      "img" : "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone15hero-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693086290559",
+      "technical" : {
+        "screen" : "6.1 inch, OLED, Super Retina XDR, 2556 x 1179 Pixels",
+        "cameraBefore": "48.0 MP + 12.0 MP",
+        "CameraSelfie" : "12.0 MP",
+        "RAM" : "6 GB",
+        "Memory" : "128 GB",
+        "CPU" : "Apple A16 Bionic",
+        "battery" : "20 Giờ"
       }
     }
   ]

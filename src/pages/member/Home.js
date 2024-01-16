@@ -1,7 +1,21 @@
 import Footer from "@/components/member/Footer"
 import Header from "@/components/member/Header"
+import { formatNumberWithCommas, getAllProduct } from "@/services/product"
+import { useEffect, useState } from "@/utilities"
 
 const Home = () => {
+  const [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    getAllProduct()
+      .then(res => {
+        setProduct(res)
+      })
+  }, [])
+
+  
+
+  console.log(product);
 
   return /*html */ `
     ${Header()}
@@ -33,54 +47,27 @@ const Home = () => {
         </div>
 
         <div class="tw-w-full tw-h-auto tw-px-28 tw-pb-10 tw-pt-2 d-flex tw-gap-5 tw-flex-wrap">
-            <a href="/detail/san-pham-1" class="custoom-hover tw-w-[350px] tw-h-[450px] tw-bg-white tw-rounded-3xl tw-shadow-xl tw-flex tw-flex-col tw-justify-between text-decoration-none tw-text-black">
-                <div class="d-flex flex-column tw-pt-5 tw-px-6">
-                  <span class="tw-text-[#BF4800] tw-font-semibold">NEW</span>
-                  <h4 class="">iPhone 15 Pro Max</h4>
-                </div>
+          ${
+            product?.map(p => {
+              return /*html */`
+                  <a href="/detail/${p.id}" class="custoom-hover tw-w-[350px] tw-h-[450px] tw-bg-white tw-rounded-3xl tw-shadow-xl tw-flex tw-flex-col tw-justify-between text-decoration-none tw-text-black">
+                    <div class="d-flex flex-column tw-pt-5 tw-px-6">
+                      <span class="tw-text-[#BF4800] tw-font-semibold">NEW</span>
+                      <h4 class="">${p.name}</h4>
+                    </div>
 
-                <div class=" tw-pb-8">
-                  <img class="tw-object-cover" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693086290312" />
-                </div>
+                    <div class=" tw-pb-8">
+                      <img class="tw-object-cover" src="${p.img}" />
+                    </div>
 
-                <div class="tw-px-6 d-flex tw-justify-between align-items-center tw-pb-3">
-                  <span class="tw-font-semibold">Price 999$ </span>
-                  <button class="tw-bg-[#0077ED] tw-text-white tw-w-[4rem] tw-h-[2.3rem] tw-font-semibold tw-rounded-full tw-shadow-md">Buy</button>
-                </div>
-            </a>
-
-            <a href="" class="custoom-hover tw-w-[350px] tw-h-[450px] tw-bg-white tw-rounded-3xl tw-shadow-xl tw-flex tw-flex-col tw-justify-between text-decoration-none tw-text-black">
-                <div class="d-flex flex-column tw-pt-5 tw-px-6">
-                  <span class="tw-text-[#BF4800] tw-font-semibold">NEW</span>
-                  <h4 class="">iPhone 15 Pro Max</h4>
-                </div>
-
-                <div class=" tw-pb-8">
-                  <img class="tw-object-cover" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693086290312" />
-                </div>
-
-                <div class="tw-px-6 d-flex tw-justify-between align-items-center tw-pb-3">
-                  <span class="tw-font-semibold">Price 999$ </span>
-                  <button class="tw-bg-[#0077ED] tw-text-white tw-w-[4rem] tw-h-[2.3rem] tw-font-semibold tw-rounded-full tw-shadow-md">Buy</button>
-                </div>
-            </a>
-
-            <a href="" class="custoom-hover tw-w-[350px] tw-h-[450px] tw-bg-white tw-rounded-3xl tw-shadow-xl tw-flex tw-flex-col tw-justify-between text-decoration-none tw-text-black">
-                <div class="d-flex flex-column tw-pt-5 tw-px-6">
-                  <span class="tw-text-[#BF4800] tw-font-semibold">NEW</span>
-                  <h4 class="">iPhone 15 Pro Max</h4>
-                </div>
-
-                <div class=" tw-pb-8">
-                  <img class="tw-object-cover" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693086290312" />
-                </div>
-
-                <div class="tw-px-6 d-flex tw-justify-between align-items-center tw-pb-3">
-                  <span class="tw-font-semibold">Price 999$ </span>
-                  <button class="tw-bg-[#0077ED] tw-text-white tw-w-[4rem] tw-h-[2.3rem] tw-font-semibold tw-rounded-full tw-shadow-md">Buy</button>
-                </div>
-            </a>
-           
+                    <div class="tw-px-6 d-flex tw-justify-between align-items-center tw-pb-3">
+                      <span class="tw-font-semibold">Giá: ${formatNumberWithCommas(p.price)} đ</span>
+                      <button class="tw-bg-[#0077ED] tw-text-white tw-w-[4rem] tw-h-[2.3rem] tw-font-semibold tw-rounded-full tw-shadow-md">Buy</button>
+                    </div>
+                </a>
+              `
+            })
+          }
         </div>
     </div>
     ${Footer()}
