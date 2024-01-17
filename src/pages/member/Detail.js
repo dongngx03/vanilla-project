@@ -15,28 +15,41 @@ const Detail = ({ data }) => {
    
   }, []);
 
+  // hiệu ứng UI
   useEffect(() => {
     const buy = document.getElementById('buy');
     buy.addEventListener('click', (e) => {
       e.preventDefault();
       console.log(e.currentTarget.dataset.id);
     })
+
+    const img = document.getElementById('img-detail');
+    const infor = document.getElementById('infor-detail')
+
+    setTimeout(() => {
+        img.style.transform = "translateY(0px)";
+        img.style.transition = "0.5s all";
+        img.style.opacity = '1';
+
+        infor.style.transform = "translateY(0px)";
+        infor.style.transition = "0.5s all";
+        infor.style.opacity = '1';
+
+    }, 500)
   })
 
   const { id, name, desc, price, img, technical} = product;
-
-  
 
   return /*html */`
     ${Header()}
     <div class="tw-w-full tw-h-auto tw-bg-[#fffff] tw-mb-10">
         <hr>
         <div class="tw-w-full tw-h-screen d-flex tw-px-36">
-            <div class="tw-h-full tw-w-1/2 d-flex tw-justify-center align-items-center">
+            <div id="img-detail" class="tw-h-full tw-w-1/2 d-flex tw-justify-center align-items-center">
               <img class="tw-object-cover tw-w-full" src="${img}" />
             </div>
 
-            <div class="tw-w-1/2 tw-h-full tw-overflow-auto tw-flex tw-flex-col scroll">
+            <div id="infor-detail" class="tw-w-1/2 tw-h-full tw-overflow-auto tw-flex tw-flex-col scroll">
               <span class="tw-text-3xl tw-font-semibold">${name}</span>
               <div class="tw-w-full tw-h-auto tw-py-3 tw-flex tw-justify-between align-items-center">
                 <span class="tw-text-lg tw-font-medium tw-text-red-700">${formatNumberWithCommas(parseInt(price))} đ</span>

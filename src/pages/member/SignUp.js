@@ -6,49 +6,43 @@ import Swal from "sweetalert2"
 const SignUp = () => {
 
     const validation = (userInfor) => {
+
+        const errName = document.getElementById('err-name');
+        const errPw = document.getElementById('err-pw');
+        const errCpw = document.getElementById('err-cpw');
         if (userInfor.name == "") {
-           
-            document.getElementById('err-name')
-                .innerText = "Bạn chưa nhập trường này "
+            errName.innerText = "Bạn chưa nhập trường này "
             return false
-        }else{
-            document.getElementById('err-name')
-            .innerText = ""
+        } else {
+            errName.innerText = ""
         }
 
         if (userInfor.pw == '') {
-           document.getElementById('err-pw')
-                .innerText = "Bạn chưa nhập trường này "
+            errPw.innerText = "Bạn chưa nhập trường này "
             return false
         }
-        
-        else if(Array.from(userInfor.pw).length <= 8) {
-            document.getElementById('err-pw')
-                .innerText = "Mật khẩu phải nhiều hơn 8 ký tự "
+
+        else if (Array.from(userInfor.pw).length <= 8) {
+            errPw.innerText = "Mật khẩu phải nhiều hơn 8 ký tự "
             return false
         }
-        else{
-            document.getElementById('err-pw')
-                .innerText = ""
+        else {
+            errPw.innerText = ""
         }
 
         if (userInfor.cpw == '') {
-            document.getElementById('err-cpw')
-                .innerText = "Bạn chưa nhập trường này "
+            errCpw.innerText = "Bạn chưa nhập trường này "
             return false
 
         } else if (userInfor.cpw !== userInfor.pw) {
-            document.getElementById('err-cpw')
-                .innerText = " Mật khẩu không trùng khớp "
+            errCpw.innerText = " Mật khẩu không trùng khớp "
             return false
         }
-        else{
-            document.getElementById('err-cpw')
-                .innerText = ""
+        else {
+            errCpw.innerText = ""
         }
 
         return true
-
 
     }
 
@@ -68,33 +62,33 @@ const SignUp = () => {
                 cpw: cpw.value
             }
 
-            if( validation(userInfor)) {
+            if (validation(userInfor)) {
                 signUp(name.value, email.value, pw.value)
                     .then(res => {
-                        if(res == true) {
+                        if (res == true) {
                             Swal.fire({
                                 title: 'Thành công',
                                 text: 'Đăng ký thành công, tiếp tục để đăng nhập',
                                 icon: 'success',
                                 confirmButtonText: 'Tiếp tục',
                             }).then((result) => {
-                                if(result.isConfirmed) {
+                                if (result.isConfirmed) {
                                     router.navigate('signin')
                                 }
                             });
-                            
-                        }else{
+
+                        } else {
                             Swal.fire({
                                 title: 'Lỗi',
                                 text: 'Email đã tồn tại, vui lòng chọn email khác',
                                 icon: 'error',
                                 confirmButtonText: 'Đóng',
                             }).then((result) => {
-                                if(result.isConfirmed) {
+                                if (result.isConfirmed) {
                                     router.navigate('signup')
-                                }   
+                                }
                             });
-                           
+
                         }
                     })
             }
@@ -146,7 +140,7 @@ const SignUp = () => {
                     />
                     <span class="tw-text-xs tw-text-red-700" id="err-cpw"></span>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 d-flex flex-column">
                     <span>Bạn đã có tài khoản? </span>
                     <a href="/signin">Đăng nhập</a>
                     <button class="btn btn-primary" type="submit">

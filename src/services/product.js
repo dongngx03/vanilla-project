@@ -25,8 +25,21 @@ const getDetail = async (id) => {
     }
 }
 
+// lấy sản phẩm iphone thôi 
+const getTypeIphone = async (type) => {
+    try {
+        const res = await fetch(`${api_base}/product?type=${type}`);
+        
+        const data = await res.json();
+
+        return data
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 function formatNumberWithCommas(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   }
 
-export { getAllProduct, getDetail, formatNumberWithCommas }
+export { getAllProduct, getDetail, formatNumberWithCommas, getTypeIphone }

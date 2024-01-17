@@ -30,3 +30,40 @@
     opacity: 0;
     transform: translateX(500px);
 }
+#img-detail{
+    opacity: 0;
+    transform: translateY(-50px);
+}
+#infor-detail{
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+#img-detail1{
+    opacity: 0;
+    transform: translateX(-500px);
+}
+#infor-detail1{
+    opacity: 0;
+    transform: translateX(500px);
+}
+
+#product-opa{
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+#left{
+    opacity: 0;
+    transform: translateX(-50px);
+}
+#top{
+    opacity: 0;
+    transform: translateY(-50px);
+}
+#bot{
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+

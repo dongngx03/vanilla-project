@@ -6,22 +6,20 @@ import Swal from "sweetalert2"
 const SignIn = () => {
 
     const validate = (user) => {
+        const errEmail = document.getElementById('err-email');
+        const errPw = document.getElementById('err-pw');
         if (user.email === "") {
-            document.getElementById('err-email')
-                .innerText = "Bạn chưa nhập email"
+            errEmail.innerText = "Bạn chưa nhập email"
             return false
         } else {
-            document.getElementById('err-email')
-                .innerText = ""
+            errEmail.innerText = ""
         }
 
         if (user.pw === "") {
-            document.getElementById('err-pw')
-                .innerText = "Bạn chưa nhập mật khẩu "
+            errPw.innerText = "Bạn chưa nhập mật khẩu "
             return false
         } else {
-            document.getElementById('err-pw')
-                .innerText = ""
+            errPw.innerText = ""
         }
 
         return true
@@ -50,13 +48,13 @@ const SignIn = () => {
                                     icon: 'success',
                                     confirmButtonText: 'Tiếp tục',
                                 }).then((result) => {
-                                    if(result.isConfirmed) {
+                                    if (result.isConfirmed) {
                                         localStorage.setItem('userId', res[0].id);
                                         localStorage.setItem('userName', res[0].name);
                                         router.navigate('/')
                                     }
                                 });
-                                
+
                             } else {
                                 Swal.fire({
                                     title: 'Lỗi',
@@ -95,7 +93,7 @@ const SignIn = () => {
                     <input  type="password" class="form-control" id="pw"/>
                     <span class="tw-text-xs tw-text-red-700" id="err-pw"></span>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 d-flex flex-column">
                     <span>Bạn chưa có tài khoản? </span>
                     <a href="/signup">Đăng ký</a>
                     <button class="btn btn-primary" type="submit">
