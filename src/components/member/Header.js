@@ -1,11 +1,48 @@
+import { router, useEffect, useState } from "@/utilities"
+import Swal from "sweetalert2"
 
 const Header = () => {
+    const [userId, setUserId] = useState('');
+    const [userName, setUserName] = useState('');
+
+
+    useEffect(() => {
+        const userId = localStorage.getItem('userId');
+        const userName = localStorage.getItem('userName');
+
+        setUserId(userId)
+        setUserName(userName)
+
+    }, [])
+
+    useEffect(() => {
+
+        document.getElementById('logout')
+            .addEventListener('click', (e) => {
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Xác nhận',
+                    text: 'Bạn muốn đăng xuất',
+                    icon: 'question',
+                    confirmButtonText: 'xác nhận',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        localStorage.clear();
+                        window.location.href = "/signin"
+                    }
+                });
+
+            });
+
+    })
+
+
     return /*html */`
         <Header class="tw-w-full tw-h-[50px] tw-bg-[#F5F5F7] d-flex tw-justify-between">
             <div class="tw-h-full d-flex justify-content-center align-items-center tw-pl-28 tw-gap-9">
-                <a href="/" data-navigo class="text-dark"><i class="fa-brands fa-apple fa-lg"></i></a>
-                <a href="/signin" data-navigo  class="text-decoration-none tw-text-black">Iphone</a>
-                <a href="/signup" data-navigo class="text-decoration-none tw-text-black">Mac</a>
+                <a href="/"  class="text-dark"><i class="fa-brands fa-apple fa-lg"></i></a>
+                <a href="/iphone"  class="text-decoration-none tw-text-black">Iphone</a>
+                <a href="/macbook"  class="text-decoration-none tw-text-black">Mac</a>
                 <a href="" class="text-decoration-none tw-text-black">Watch</a>
                 <a href="" class="text-decoration-none tw-text-black">AirPods</a>
             </div>
@@ -16,8 +53,9 @@ const Header = () => {
                     <button class="tw-w-[2rem] tw-rounded-full tw-absolute tw-top-0 tw-right-1"><i class="fa-solid fa-magnifying-glass"></i></button>
                </div>
 
-               <button><i class="fa-solid fa-user"></i></button>
+               ${userName ? `<span class="tw-font-semibold">${userName}</span>` : `<a href="/signin" class="tw-text-black"><i class="fa-solid fa-user"></i></a>`}
                <button><i class="fa-solid fa-bag-shopping"></i></button>
+               ${userId ? `<button id="logout"><i class="fa-solid fa-right-from-bracket"></i></button>` : ""}
                
             </div>
         </Header>

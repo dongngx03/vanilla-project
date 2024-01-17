@@ -17,3 +17,16 @@
 .scroll::-webkit-scrollbar{
     width: 5px;
 }
+
+#img-phone{
+    opacity: 0;
+    transform: translateX(-500px);
+}
+#img-mac{
+    opacity: 0;
+    transform: translateX(-500px);
+}
+#span-mac{
+    opacity: 0;
+    transform: translateX(500px);
+}

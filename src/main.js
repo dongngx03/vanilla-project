@@ -12,6 +12,8 @@ import SignIn from "./pages/member/SignIn";
 import SignUp from "./pages/member/SignUp";
 import AddProduct from "./pages/admin/AddProduct";
 import Detail from "./pages/member/Detail";
+import Iphone from "./pages/member/Iphone";
+import MacBook from "./pages/member/MacBook";
 
 //gọi root app
 const app = document.getElementById('app');
@@ -22,7 +24,8 @@ router.on('/', () => render(Home, app))
 router.on('/signin', () => render(SignIn, app))
 router.on('/signup', () => render(SignUp, app))
 router.on('/detail/:id', (data) => render(() => Detail(data), app))
-
+router.on('/iphone', () => render(Iphone, app))
+router.on('/macbook', () => render(MacBook, app))
 // admin
 router.on('/admin/addproduct', () => render(AddProduct, app))
 // 404

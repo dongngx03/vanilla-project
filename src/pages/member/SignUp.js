@@ -1,6 +1,7 @@
 
 import { signUp } from "@/services/api"
 import { useEffect, useState, router } from "@/utilities"
+import Swal from "sweetalert2"
 
 const SignUp = () => {
 
@@ -71,11 +72,29 @@ const SignUp = () => {
                 signUp(name.value, email.value, pw.value)
                     .then(res => {
                         if(res == true) {
-                            alert('Tạo tài khoản thành công ')
-                            window.location.href = '/signin'
+                            Swal.fire({
+                                title: 'Thành công',
+                                text: 'Đăng ký thành công, tiếp tục để đăng nhập',
+                                icon: 'success',
+                                confirmButtonText: 'Tiếp tục',
+                            }).then((result) => {
+                                if(result.isConfirmed) {
+                                    router.navigate('signin')
+                                }
+                            });
+                            
                         }else{
-                            alert('Email đã tồn tại, vui lòng tạo bằng email khác ')
-                            window.location.href = '/signup'
+                            Swal.fire({
+                                title: 'Lỗi',
+                                text: 'Email đã tồn tại, vui lòng chọn email khác',
+                                icon: 'error',
+                                confirmButtonText: 'Đóng',
+                            }).then((result) => {
+                                if(result.isConfirmed) {
+                                    router.navigate('signup')
+                                }   
+                            });
+                           
                         }
                     })
             }
@@ -128,6 +147,8 @@ const SignUp = () => {
                     <span class="tw-text-xs tw-text-red-700" id="err-cpw"></span>
                 </div>
                 <div class="mb-3">
+                    <span>Bạn đã có tài khoản? </span>
+                    <a href="/signin">Đăng nhập</a>
                     <button class="btn btn-primary" type="submit">
                         Đăng ký
                     </button>

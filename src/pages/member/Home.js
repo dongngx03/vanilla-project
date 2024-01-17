@@ -2,6 +2,7 @@ import Footer from "@/components/member/Footer"
 import Header from "@/components/member/Header"
 import { formatNumberWithCommas, getAllProduct } from "@/services/product"
 import { useEffect, useState } from "@/utilities"
+import { router } from "@/utilities"
 
 const Home = () => {
   const [product, setProduct] = useState([]);
@@ -12,6 +13,14 @@ const Home = () => {
         setProduct(res)
       })
   }, [])
+
+  useEffect(() => {
+    document.getElementById('click')
+      .addEventListener('click', (e) => {
+        e.preventDefault();
+        router.navigate("signin")
+      })
+  })
 
   
 
@@ -28,7 +37,7 @@ const Home = () => {
               <img class="tw-w-[40px] tw-h-[40px]" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-chat-specialist-icon-202309_AV3?wid=70&hei=70&fmt=jpeg&qlt=90&.v=1701194050300" />
               <div class="d-flex tw-flex-col">
                 <span class="tw-font-bold">Need shopping help?</span>
-                <a href="" class="text-decoration-none tw-text-sm">Ask an Iphone Specialist</a>
+                <a id="click" href="" class="text-decoration-none tw-text-sm">Ask an Iphone Specialist</a>
               </div>
             </div>
 
@@ -66,7 +75,7 @@ const Home = () => {
                     </div>
                 </a>
               `
-            })
+            }).join("")
           }
         </div>
     </div>

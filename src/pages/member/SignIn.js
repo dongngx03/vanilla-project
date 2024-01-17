@@ -1,5 +1,6 @@
 import { getOneUser } from "@/services/api"
-import { useEffect } from "@/utilities"
+import { router, useEffect } from "@/utilities"
+import Swal from "sweetalert2"
 
 
 const SignIn = () => {
@@ -43,14 +44,34 @@ const SignIn = () => {
                     .then(res => {
                         if (res) {
                             if (res[0].pw === user.pw) {
-                                alert('Đăng nhập thành công')
-                                localStorage.setItem('userId', res[0].id)
-                                window.location.href = "/"
+                                Swal.fire({
+                                    title: 'Thành công',
+                                    text: 'Đăng nhập thành công',
+                                    icon: 'success',
+                                    confirmButtonText: 'Tiếp tục',
+                                }).then((result) => {
+                                    if(result.isConfirmed) {
+                                        localStorage.setItem('userId', res[0].id);
+                                        localStorage.setItem('userName', res[0].name);
+                                        router.navigate('/')
+                                    }
+                                });
+                                
                             } else {
-                                alert('Sai mật khẩu, vui lòng thử lại')
+                                Swal.fire({
+                                    title: 'Lỗi',
+                                    text: 'Sai mật khẩu, vui lòng thử lại ',
+                                    icon: 'error',
+                                    confirmButtonText: 'Đóng',
+                                });
                             }
                         } else {
-                            alert("email không tồn tại vui lòng thử lại ")
+                            Swal.fire({
+                                title: 'Lỗi',
+                                text: 'Email không tồn tại, vui lòng thử lại',
+                                icon: 'error',
+                                confirmButtonText: 'Đóng',
+                            });
                         }
                     })
             }
@@ -75,6 +96,8 @@ const SignIn = () => {
                     <span class="tw-text-xs tw-text-red-700" id="err-pw"></span>
                 </div>
                 <div class="mb-3">
+                    <span>Bạn chưa có tài khoản? </span>
+                    <a href="/signup">Đăng ký</a>
                     <button class="btn btn-primary" type="submit">
                         Đăng nhập
                     </button>
