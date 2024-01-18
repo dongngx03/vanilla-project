@@ -1,6 +1,6 @@
 import Header from "@/components/member/Header"
-import { formatNumberWithCommas, getTypeIphone } from "@/services/product";
-import { useEffect, useState } from "@/utilities"
+import productApi from "@/services/productApi";
+import { useEffect, useState, formatNumberWithCommas } from "@/utilities"
 
 
 const Iphone = () => {
@@ -8,11 +8,8 @@ const Iphone = () => {
 
     
     useEffect(() => {
-
-        getTypeIphone('iphone')
-            .then((res) => {
-                setIphone(res)
-            })
+        productApi.getType('iphone')
+            .then(res => setIphone(res.data))
     }, [])
 
     console.log(iphone);

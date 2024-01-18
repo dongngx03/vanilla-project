@@ -1,27 +1,18 @@
 import Footer from "@/components/member/Footer"
 import Header from "@/components/member/Header"
-import { formatNumberWithCommas, getAllProduct } from "@/services/product"
-import { useEffect, useState } from "@/utilities"
-import { router } from "@/utilities"
+import { formatNumberWithCommas, useEffect, useState } from "@/utilities"
+import productApi from "@/services/productApi"
 
 const Home = () => {
   const [product, setProduct] = useState([]);
-
+  
   useEffect(() => {
-    getAllProduct()
-      .then(res => {
-        setProduct(res)
-      })
+      productApi.getAll()
+        .then(res => setProduct(res.data))
   }, [])
 
   // hiệu ứng UI
   useEffect(() => {
-    document.getElementById('click')
-      .addEventListener('click', (e) => {
-        e.preventDefault();
-        router.navigate("signin")
-      })
-
       const img = document.getElementById('img-detail1');
       const infor = document.getElementById('infor-detail1')
       const p = document.getElementById('product-opa')
@@ -47,7 +38,9 @@ const Home = () => {
   console.log(product);
 
   return /*html */ `
+
     ${Header()}
+
     <div class="tw-w-full tw-h-auto tw-bg-[#F5F5F7]">
         <div class="tw-w-full tw-h-[10rem] tw-p-28 d-flex tw-justify-between align-items-center">
           <h1 id="img-detail1">Shop iPhone</h1>
@@ -99,6 +92,7 @@ const Home = () => {
           }
         </div>
     </div>
+    
     ${Footer()}
   `
 }

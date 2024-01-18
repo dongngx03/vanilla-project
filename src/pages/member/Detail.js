@@ -1,44 +1,34 @@
 import Footer from "@/components/member/Footer"
 import Header from "@/components/member/Header"
-import { formatNumberWithCommas, getDetail } from "@/services/product"
-import { useEffect, useState } from "@/utilities"
+import productApi from "@/services/productApi"
+import { useEffect, useState, formatNumberWithCommas } from "@/utilities"
 
 
 const Detail = ({ data }) => {
   const [product, setProduct] = useState('')
   useEffect(() => {
-    getDetail(data.id)
-      .then(res => {
-        setProduct(res)
-      })
-   
-   
+    productApi.getDetail(data.id)
+      .then(res => setProduct(res.data))
   }, []);
 
   // hiệu ứng UI
   useEffect(() => {
-    const buy = document.getElementById('buy');
-    buy.addEventListener('click', (e) => {
-      e.preventDefault();
-      console.log(e.currentTarget.dataset.id);
-    })
-
     const img = document.getElementById('img-detail');
-    const infor = document.getElementById('infor-detail')
+    const infor = document.getElementById('infor-detail');
 
     setTimeout(() => {
-        img.style.transform = "translateY(0px)";
-        img.style.transition = "0.5s all";
-        img.style.opacity = '1';
+      img.style.transform = "translateY(0px)";
+      img.style.transition = "0.5s all";
+      img.style.opacity = '1';
 
-        infor.style.transform = "translateY(0px)";
-        infor.style.transition = "0.5s all";
-        infor.style.opacity = '1';
+      infor.style.transform = "translateY(0px)";
+      infor.style.transition = "0.5s all";
+      infor.style.opacity = '1';
 
     }, 500)
   })
 
-  const { id, name, desc, price, img, technical} = product;
+  const { id, name, desc, price, img, technical } = product;
 
   return /*html */`
     ${Header()}

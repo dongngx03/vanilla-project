@@ -109,4 +109,9 @@ router.on("/*", () => {}, {
 
 });
 
-export { render, useState, useEffect, router };
+// format số 
+function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+export { render, useState, useEffect, router, formatNumberWithCommas };

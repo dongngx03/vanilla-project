@@ -1,12 +1,11 @@
 
-import { signUp } from "@/services/api"
+import userApi from "@/services/userApi";
 import { useEffect, useState, router } from "@/utilities"
 import Swal from "sweetalert2"
 
 const SignUp = () => {
-
+    // validate signUp
     const validation = (userInfor) => {
-
         const errName = document.getElementById('err-name');
         const errPw = document.getElementById('err-pw');
         const errCpw = document.getElementById('err-cpw');
@@ -17,12 +16,11 @@ const SignUp = () => {
             errName.innerText = ""
         }
 
-        if (userInfor.pw == '') {
+        if (userInfor.password == '') {
             errPw.innerText = "Bạn chưa nhập trường này "
             return false
         }
-
-        else if (Array.from(userInfor.pw).length <= 8) {
+        else if (Array.from(userInfor.password).length <= 8) {
             errPw.innerText = "Mật khẩu phải nhiều hơn 8 ký tự "
             return false
         }
@@ -34,7 +32,7 @@ const SignUp = () => {
             errCpw.innerText = "Bạn chưa nhập trường này "
             return false
 
-        } else if (userInfor.cpw !== userInfor.pw) {
+        } else if (userInfor.cpw !== userInfor.password) {
             errCpw.innerText = " Mật khẩu không trùng khớp "
             return false
         }
@@ -45,7 +43,7 @@ const SignUp = () => {
         return true
 
     }
-
+    // get value
     useEffect(() => {
         const name = document.getElementById('input-name');
         const email = document.getElementById('input-email');
@@ -55,41 +53,45 @@ const SignUp = () => {
 
         form.addEventListener('click', (e) => {
             e.preventDefault();
-            const userInfor = {
+            const user = {
                 name: name.value,
                 email: email.value,
-                pw: pw.value,
-                cpw: cpw.value
+                password: pw.value,
+                cpw: cpw.value,
             }
 
-            if (validation(userInfor)) {
-                signUp(name.value, email.value, pw.value)
+            if (validation(user)) {
+                userApi.signUp({
+                    email: email.value,
+                    name: name.value,
+                    password: pw.value,
+                    permission: "Member"
+                })
                     .then(res => {
-                        if (res == true) {
+                        if (res.status === 201) {
                             Swal.fire({
                                 title: 'Thành công',
-                                text: 'Đăng ký thành công, tiếp tục để đăng nhập',
+                                text: 'Tạo tài khoản thành công',
                                 icon: 'success',
                                 confirmButtonText: 'Tiếp tục',
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     router.navigate('signin')
                                 }
-                            });
-
-                        } else {
-                            Swal.fire({
-                                title: 'Lỗi',
-                                text: 'Email đã tồn tại, vui lòng chọn email khác',
-                                icon: 'error',
-                                confirmButtonText: 'Đóng',
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    router.navigate('signup')
-                                }
-                            });
-
+                            })
                         }
+                    })
+                    .catch(() => {
+                        Swal.fire({
+                            title: 'Lỗi',
+                            text: 'Email đã tồn tại, vui lòng chọn email khác',
+                            icon: 'error',
+                            confirmButtonText: 'Đóng',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                router.navigate('signup')
+                            }
+                        });
                     })
             }
 

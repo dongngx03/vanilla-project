@@ -1,10 +1,11 @@
-import { getOneUser } from "@/services/api"
+
+import userApi from "@/services/userApi";
 import { router, useEffect } from "@/utilities"
 import Swal from "sweetalert2"
 
 
 const SignIn = () => {
-
+    // validate from signin
     const validate = (user) => {
         const errEmail = document.getElementById('err-email');
         const errPw = document.getElementById('err-pw');
@@ -24,6 +25,7 @@ const SignIn = () => {
 
         return true
     }
+    // get value from form 
     useEffect(() => {
         const email = document.getElementById('email');
         const pw = document.getElementById('pw');
@@ -38,42 +40,41 @@ const SignIn = () => {
             }
 
             if (validate(user)) {
-                getOneUser(user.email)
+                userApi.signIn({
+                    email: email.value,
+                    password: pw.value
+                })
                     .then(res => {
-                        if (res) {
-                            if (res[0].pw === user.pw) {
-                                Swal.fire({
-                                    title: 'Thành công',
-                                    text: 'Đăng nhập thành công',
-                                    icon: 'success',
-                                    confirmButtonText: 'Tiếp tục',
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        localStorage.setItem('userId', res[0].id);
-                                        localStorage.setItem('userName', res[0].name);
-                                        router.navigate('/')
-                                    }
-                                });
-
-                            } else {
-                                Swal.fire({
-                                    title: 'Lỗi',
-                                    text: 'Sai mật khẩu, vui lòng thử lại ',
-                                    icon: 'error',
-                                    confirmButtonText: 'Đóng',
-                                });
-                            }
-                        } else {
+                        console.log(res);
+                        if (res.status === 200) {
+                            Swal.fire({
+                                title: 'Thành công',
+                                text: 'Đăng nhập thành công ',
+                                icon: 'success',
+                                confirmButtonText: 'Tiếp tục',
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    sessionStorage.setItem('user', JSON.stringify(res.data))
+                                    router.navigate('/')
+                                }
+                            })
+                        }
+                    })
+                    .catch((res) => {
+                        if (res?.response?.status === 400) {
                             Swal.fire({
                                 title: 'Lỗi',
-                                text: 'Email không tồn tại, vui lòng thử lại',
+                                text: res?.response?.data,
                                 icon: 'error',
                                 confirmButtonText: 'Đóng',
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    router.navigate('signin')
+                                }
                             });
                         }
                     })
             }
-
 
         })
 

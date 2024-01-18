@@ -5,18 +5,15 @@ const Header = () => {
     const [userId, setUserId] = useState('');
     const [userName, setUserName] = useState('');
 
-
+    
     useEffect(() => {
-        const userId = localStorage.getItem('userId');
-        const userName = localStorage.getItem('userName');
-
-        setUserId(userId)
-        setUserName(userName)
-
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        //console.log(user);
+        setUserId(user?.user?.id);
+        setUserName(user?.user?.name);
     }, [])
 
     useEffect(() => {
-
         document.getElementById('logout')
             .addEventListener('click', (e) => {
                 e.preventDefault();
@@ -27,13 +24,12 @@ const Header = () => {
                     confirmButtonText: 'xác nhận',
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        localStorage.clear();
+                        sessionStorage.clear();
                         window.location.href = "/signin"
                     }
                 });
 
             });
-
     })
 
 
@@ -56,9 +52,9 @@ const Header = () => {
                ${userName ? `<span class="tw-font-semibold">${userName}</span>` : `<a href="/signin" class="tw-text-black"><i class="fa-solid fa-user"></i></a>`}
                <button><i class="fa-solid fa-bag-shopping"></i></button>
                ${userId ? `<button id="logout"><i class="fa-solid fa-right-from-bracket"></i></button>` : ""}
-               
             </div>
         </Header>
+
         <div class="tw-bg-white tw-h-[60px] tw-w-full d-flex tw-justify-center align-items-center">
             <span class="">Get $200–$650 in credit toward iPhone 15 or iPhone 15 Pro when you trade in iPhone 11 or higher.2</span>
         </div>

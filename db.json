@@ -1,77 +1,32 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Đông nguyễn",
+      "email": "kh2@gmail.com",
+      "password": "$2a$10$vdFsR5TPsWwLod5.R4OS6.sBU56Ivy7uoIDnu6vZvqH/o5fDe2o5a",
+      "name": "Mr Rin",
+      "permission": "Member",
+      "id": 1
+    },
+    {
+      "email": "kh3@gmail.com",
+      "password": "$2a$10$DS79H3ifTxz7LtTj5qZDLepem7.oo8LvSEYMUpNejISU4FRRX37zq",
+      "name": "Mr đông",
+      "permission": "Member",
+      "id": 2
+    },
+    {
+      "email": "Admin@gmail.com",
+      "password": "$2a$10$T.IkKY8R3ASMtiJo81rbXe08jBPXDD1sLG4yi0N.BldbIa7OCIQDu",
+      "name": "Admin",
+      "permission": "Admin",
+      "id": 4
+    },
+    {
       "email": "dong@gmail.com",
-      "pw": "123456789",
-      "rule": "member"
-    },
-    {
-      "id": "519a",
-      "name": "huy",
-      "email": "huy@gmail.com",
-      "pw": "123456789",
-      "rule": "member"
-    },
-    {
-      "id": "a2a4",
-      "name": "hiền",
-      "email": "hien@gmail.com",
-      "pw": "123456789",
-      "rule": "member"
-    },
-    {
-      "id": "5c77",
-      "name": "nguyễn đông",
-      "email": "dong111@gmail.com",
-      "pw": "123456789",
-      "rule": "member"
-    },
-    {
-      "id": "b8f1",
-      "name": "phương ",
-      "email": "phuong@gmail.com",
-      "pw": "123456789",
-      "rule": "member"
-    },
-    {
-      "id": "9e88",
-      "name": "đông ngueyenx ",
-      "email": "111@gmail.com",
-      "pw": "123456789",
-      "rule": "member"
-    },
-    {
-      "id": "a4e9",
-      "name": "thịnh nguyễn ",
-      "email": "thinh@gmail.com",
-      "pw": "123456789",
-      "rule": "member"
-    },
-    {
-      "id": "881b",
-      "name": "huy hồ ",
-      "email": "huyho@gmail.com",
-      "pw": "123456789"
-    },
-    {
-      "id": "816c",
-      "name": "huy hồ ",
-      "email": "huyho@gmail.com",
-      "pw": "123456789"
-    },
-    {
-      "id": "48c6",
-      "name": "đông ",
-      "email": "hihihi@gmail.com",
-      "pw": "123456789"
-    },
-    {
-      "id": "8c9a",
-      "name": "đông ngueyenx ",
-      "email": "ddddd@gmail.com",
-      "pw": "123456789"
+      "password": "$2a$10$Nr2udUhsBr1j1JeumNs/n.aLDGnWcZnhcS02eOnrjDNtj8U1iME1i",
+      "name": "Đông 03",
+      "permission": "Member",
+      "id": 5
     }
   ],
   "type": [
