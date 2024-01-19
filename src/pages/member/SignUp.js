@@ -96,17 +96,30 @@ const SignUp = () => {
             }
 
         })
+        // UI animation
+        const formRegister = document.getElementById('form-register');
+        const imgRegister = document.getElementById('img-register');
+        setTimeout(() => {
+            formRegister.style.transform = "translateX(0px)"
+            formRegister.style.transition = "0.8s all"
+            formRegister.style.opacity = '1';
+
+            imgRegister.style.transform = "translateX(0px)"
+            imgRegister.style.transition = "0.8s all"
+            imgRegister.style.opacity = '1'
+        }, 500)
+
 
     })
 
 
     return /*html */ `
-    <div class="tw-w-full tw-h-screen d-flex justify-content-center align-items-center">
-        <div class="tw-w-1/2 tw-h-auto tw-bg-gray-50 tw-p-3 tw-rounded-lg tw-shadow-lg">
-            <h3 class="text-center">Đăng ký</h3>
+    <div class="tw-w-full tw-h-screen d-flex justify-content-center align-items-center tw-px-10 tw-gap-16">
+        <div id="form-register" class="tw-w-1/3 tw-h-auto tw-bg-gray-50 tw-p-3 tw-rounded-lg tw-shadow-lg tw-flex tw-flex-col tw-gap-4">
+        <span class="tw-text-center tw-font-semibold tw-text-2xl">Đăng Ký</span>
             <form action="" id="form">
                 <div class="mb-3">
-                    <label>Name</label>
+                    <label class="tw-font-semibold">Name</label>
                     <input 
                         type="text"
                         class="form-control"
@@ -115,7 +128,7 @@ const SignUp = () => {
                     <span class="tw-text-xs tw-text-red-700" id="err-name"></span>
                 </div>
                 <div class="mb-3">
-                    <label>Email</label>
+                    <label class="tw-font-semibold">Email</label>
                     <input
                         type="email"
                         class="form-control"
@@ -125,7 +138,7 @@ const SignUp = () => {
                     <span class="tw-text-xs tw-text-red-700" id="err-email"></span>
                 </div>
                 <div class="mb-3">
-                    <label>Password</label>
+                    <label class="tw-font-semibold">Password</label>
                     <input  
                         type="password" 
                         class="form-control"
@@ -134,7 +147,7 @@ const SignUp = () => {
                     <span class="tw-text-xs tw-text-red-700" id="err-pw"></span>
                 </div>
                 <div class="mb-3">
-                    <label>Confirm</label>
+                    <label class="tw-font-semibold" >Confirm</label>
                     <input 
                         type="password" 
                         class="form-control"
@@ -142,15 +155,19 @@ const SignUp = () => {
                     />
                     <span class="tw-text-xs tw-text-red-700" id="err-cpw"></span>
                 </div>
-                <div class="mb-3 d-flex flex-column">
+                <div class="mb-3 d-flex flex-column tw-gap-3">
                     <span>Bạn đã có tài khoản? </span>
-                    <a href="/signin">Đăng nhập</a>
-                    <button class="btn btn-primary" type="submit">
+                    <a class="tw-font-semibold" href="/signin">Đăng nhập</a>
+                    <button class="btn btn-dark" type="submit">
                         Đăng ký
                     </button>
                 </div>
             </form>
         </div>
+
+        <div id="img-register" class="tw-w-1/2 tw-h-auto ">
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MW4W3ref_AV1?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1702935181068" />
+        <div>
     </div>
   `
 }

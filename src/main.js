@@ -40,7 +40,8 @@ else if (permission === "Admin") {
         .on('/admin/addproduct', () => render(AddProduct, app))
         .notFound(() => render(NotFound, app))
         .resolve()
-} else {
+} 
+else {
     commonRoutes()
         .notFound(() => render(NotFound, app))
         .resolve()

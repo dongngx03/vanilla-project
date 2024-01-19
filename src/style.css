@@ -66,4 +66,58 @@
     transform: translateY(-50px);
 }
 
+/* signin and sign up  */
+#form-register{
+    opacity: 0;
+    transform: translateX(300px);
+}
+
+#img-register{
+    opacity: 0;
+    transform: translateX(-300px);
+}
+
+/* home */
+
+#sesion-1{
+    opacity: 0;
+    transform: translateX(-300px);
+}
+#sesion-2{
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+/* iphone */
+
+#fillter-left::-webkit-scrollbar{
+    width: 5px;
+}
+#bot::-webkit-scrollbar{
+    width: 5px;
+}
+#left::-webkit-scrollbar{
+    width: 5px;
+}
+
+#fillProduct:hover img{
+    transition: 0.5s all;
+    transform: scale(1.01);
+}
+#fillProduct:hover #block{
+    opacity: 0;
+    transition: 0.2s all;
+    transform: translateY(50px);
+}
+
+#fillProduct:hover #none{
+    opacity: 1;
+    transition: 0.5s all;
+    display: block;
+    transform: translateY(-90px);
+    text-align: center;
+}
+
+
+
 

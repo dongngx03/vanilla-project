@@ -78,31 +78,48 @@ const SignIn = () => {
 
         })
 
+        // UI animation
+        const formRegister = document.getElementById('form-register');
+        const imgRegister = document.getElementById('img-register');
+        setTimeout(() => {
+            formRegister.style.transform = "translateX(0px)"
+            formRegister.style.transition = "0.8s all"
+            formRegister.style.opacity = '1';
+
+            imgRegister.style.transform = "translateX(0px)"
+            imgRegister.style.transition = "0.8s all"
+            imgRegister.style.opacity = '1'
+        }, 500)
+
     })
     return /*html */ `
-    <div class="tw-w-full tw-h-screen d-flex justify-content-center align-items-center">
-        <div class="tw-w-1/2 tw-h-auto tw-bg-gray-50 tw-p-3 tw-rounded-lg tw-shadow-lg">
-            <h3 class="text-center">Đăng nhập</h3>
+    <div class="tw-bg-[#FAFAFA] tw-w-full  tw-h-screen d-flex justify-content-center align-items-center tw-px-10 tw-gap-16 tw-flex-row-reverse">
+        <div id="form-register" class="tw-w-1/3 tw-h-auto tw-bg-gray-50 tw-p-3 tw-rounded-lg tw-shadow-lg tw-flex tw-flex-col tw-gap-4">
+            <span class="tw-text-center tw-font-semibold tw-text-2xl">Đăng nhập</span>
             <form id="form">
                 <div class="mb-3">
-                    <label>Email</label>
+                    <label class="tw-font-semibold">Email</label>
                     <input  type="text" class="form-control" id="email"/>
                     <span class="tw-text-xs tw-text-red-700" id="err-email"></span>
                 </div>
                 <div class="mb-3">
-                    <label>password</label>
+                    <label class="tw-font-semibold" >password</label>
                     <input  type="password" class="form-control" id="pw"/>
                     <span class="tw-text-xs tw-text-red-700" id="err-pw"></span>
                 </div>
-                <div class="mb-3 d-flex flex-column">
-                    <span>Bạn chưa có tài khoản? </span>
-                    <a href="/signup">Đăng ký</a>
-                    <button class="btn btn-primary" type="submit">
+                <div class="mb-3 d-flex flex-column tw-gap-3">
+                    <span >Bạn chưa có tài khoản? </span>
+                    <a class="tw-font-semibold" href="/signup">Đăng ký</a>
+                    <button class="btn btn-dark" type="submit">
                         Đăng nhập
                     </button>
                 </div>
             </form>
         </div>
+
+        <div id="img-register" class="tw-w-1/2 tw-h-auto ">
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/s9-case-unselect-gallery-1-202309?wid=2560&hei=1640&fmt=p-jpg&qlt=80&.v=1693525062134" />
+        <div>
     </div>
   `
 }
