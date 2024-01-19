@@ -17,7 +17,6 @@ const Iphone = () => {
     useEffect(() => {
         // UI
         const left = document.getElementById('left')
-        const top = document.getElementById('top')
         const bot = document.getElementById('bot')
 
         setTimeout(() => {

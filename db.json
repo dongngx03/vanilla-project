@@ -158,6 +158,40 @@
         "CPU": "Apple, M1, 8 - Core",
         "battery": "none"
       }
+    },
+    {
+      "id": "8",
+      "name": "MacBook Air 15-inch",
+      "desc": "Tạo điểm nhấn cho không gian làm việc của bạn Lần đầu tiên Apple mang đến rất nhiều lựa chọn màu sắc cho iMac. Bên cạnh màu Bạc cơ bản, bạn còn có đủ màu nổi bật như Xanh dương, Xanh lá, Hồng, … để thể hiện cá tính bản thân. Dây nguồn cáp dệt cũng được làm đồng màu một cách tinh tế. Giờ đây không gian làm việc sẽ mang phong cách và màu sắc của riêng bạn với iMac 24 inch 2021. Thiết kế cách mạng của dòng máy tính All-in-one Thật khó tin khi Apple lại có thể tích hợp sức mạnh phần cứng hàng đầu và màn hình 4.5K vào một thiết bị duy nhất tuyệt đẹp, siêu mỏng, nhỏ gọn đáng kinh ngạc. iMac 24 2021 Retina 4.5K M1 với độ mỏng chỉ 11,5mm, ngôn ngữ thiết kế phẳng hiện đại và bản lề hoàn hảo giống như một tác phẩm nghệ thuật, là điểm nhấn trong không gian làm việc của bạn. Mọi chi tiết trên iMac 24 2021 đều được tính toán kỹ lưỡng để mang tới sự tối giản và nghệ thuật nhất.",
+      "price": "30490000",
+      "type": "macbook",
+      "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba-digitalmat-gallery-6-202306?wid=364&hei=333&fmt=png-alpha&.v=1683914347539",
+      "technical": {
+        "screen": "15.0 inch, 2880 x 1800 Pixels, OLED, 60 Hz, 500 nits, Liquid Retina",
+        "cameraBefore": "Chưa có thông tin",
+        "CameraSelfie": "Chưa có thông tin",
+        "RAM": "8 GB, Hãng không công bố, Hãng không công bố MHz",
+        "Memory": "SSD 256 GB",
+        "CPU": "Apple, M2, 8 - Core",
+        "battery": "none"
+      }
+    },
+    {
+      "id": "9",
+      "name": "MacBook Pro 16 inch M2 Pro 2023 ",
+      "desc": "Tạo điểm nhấn cho không gian làm việc của bạn Lần đầu tiên Apple mang đến rất nhiều lựa chọn màu sắc cho iMac. Bên cạnh màu Bạc cơ bản, bạn còn có đủ màu nổi bật như Xanh dương, Xanh lá, Hồng, … để thể hiện cá tính bản thân. Dây nguồn cáp dệt cũng được làm đồng màu một cách tinh tế. Giờ đây không gian làm việc sẽ mang phong cách và màu sắc của riêng bạn với iMac 24 inch 2021. Thiết kế cách mạng của dòng máy tính All-in-one Thật khó tin khi Apple lại có thể tích hợp sức mạnh phần cứng hàng đầu và màn hình 4.5K vào một thiết bị duy nhất tuyệt đẹp, siêu mỏng, nhỏ gọn đáng kinh ngạc. iMac 24 2021 Retina 4.5K M1 với độ mỏng chỉ 11,5mm, ngôn ngữ thiết kế phẳng hiện đại và bản lề hoàn hảo giống như một tác phẩm nghệ thuật, là điểm nhấn trong không gian làm việc của bạn. Mọi chi tiết trên iMac 24 2021 đều được tính toán kỹ lưỡng để mang tới sự tối giản và nghệ thuật nhất.",
+      "price": "62900000",
+      "type": "macbook",
+      "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-16-digitalmat-gallery-1-202310?wid=364&hei=333&fmt=jpeg&qlt=95&.v=1696971483270",
+      "technical": {
+        "screen": "16.2 inch, 3456 x 2234 Pixels, OLED, 120, 1000 nits, Retina",
+        "cameraBefore": "Chưa có thông tin",
+        "CameraSelfie": "Chưa có thông tin",
+        "RAM": "16 GB (1 thanh 16 GB), Hãng không công bố, Hãng không công bố MHz",
+        "Memory": "SSD 1 TB",
+        "CPU": "Apple, M2 Pro, 12-Core",
+        "battery": "none"
+      }
     }
   ]
 }

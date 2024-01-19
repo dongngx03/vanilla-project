@@ -32,7 +32,7 @@ const Home = () => {
           p.style.transition = "1s all";
           p.style.opacity = '1';
   
-      }, 500)
+      }, 1000)
       setTimeout(() => {
         session1.style.transform = "translateX(0px)";
         session1.style.transition = "1s all";

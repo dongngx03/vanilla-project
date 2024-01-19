@@ -11,6 +11,10 @@ const productApi = {
     getType(type) {
         const url = `product?type=${type}`;
         return axiosClient.get(url);
+    },
+    create(product) {
+        const url = `product`
+        return axiosClient.post(url,product)
     }
 }
 
