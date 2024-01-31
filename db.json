@@ -165,7 +165,7 @@
       "desc": "Tạo điểm nhấn cho không gian làm việc của bạn Lần đầu tiên Apple mang đến rất nhiều lựa chọn màu sắc cho iMac. Bên cạnh màu Bạc cơ bản, bạn còn có đủ màu nổi bật như Xanh dương, Xanh lá, Hồng, … để thể hiện cá tính bản thân. Dây nguồn cáp dệt cũng được làm đồng màu một cách tinh tế. Giờ đây không gian làm việc sẽ mang phong cách và màu sắc của riêng bạn với iMac 24 inch 2021. Thiết kế cách mạng của dòng máy tính All-in-one Thật khó tin khi Apple lại có thể tích hợp sức mạnh phần cứng hàng đầu và màn hình 4.5K vào một thiết bị duy nhất tuyệt đẹp, siêu mỏng, nhỏ gọn đáng kinh ngạc. iMac 24 2021 Retina 4.5K M1 với độ mỏng chỉ 11,5mm, ngôn ngữ thiết kế phẳng hiện đại và bản lề hoàn hảo giống như một tác phẩm nghệ thuật, là điểm nhấn trong không gian làm việc của bạn. Mọi chi tiết trên iMac 24 2021 đều được tính toán kỹ lưỡng để mang tới sự tối giản và nghệ thuật nhất.",
       "price": "30490000",
       "type": "macbook",
-      "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba-digitalmat-gallery-6-202306?wid=364&hei=333&fmt=png-alpha&.v=1683914347539",
+      "img": "https://www.apple.com/v/macbook-pro/aj/images/overview/contrast/product_tile_mba_13_15__cw1q3qd2yyeu_large.png",
       "technical": {
         "screen": "15.0 inch, 2880 x 1800 Pixels, OLED, 60 Hz, 500 nits, Liquid Retina",
         "cameraBefore": "Chưa có thông tin",
@@ -182,7 +182,7 @@
       "desc": "Tạo điểm nhấn cho không gian làm việc của bạn Lần đầu tiên Apple mang đến rất nhiều lựa chọn màu sắc cho iMac. Bên cạnh màu Bạc cơ bản, bạn còn có đủ màu nổi bật như Xanh dương, Xanh lá, Hồng, … để thể hiện cá tính bản thân. Dây nguồn cáp dệt cũng được làm đồng màu một cách tinh tế. Giờ đây không gian làm việc sẽ mang phong cách và màu sắc của riêng bạn với iMac 24 inch 2021. Thiết kế cách mạng của dòng máy tính All-in-one Thật khó tin khi Apple lại có thể tích hợp sức mạnh phần cứng hàng đầu và màn hình 4.5K vào một thiết bị duy nhất tuyệt đẹp, siêu mỏng, nhỏ gọn đáng kinh ngạc. iMac 24 2021 Retina 4.5K M1 với độ mỏng chỉ 11,5mm, ngôn ngữ thiết kế phẳng hiện đại và bản lề hoàn hảo giống như một tác phẩm nghệ thuật, là điểm nhấn trong không gian làm việc của bạn. Mọi chi tiết trên iMac 24 2021 đều được tính toán kỹ lưỡng để mang tới sự tối giản và nghệ thuật nhất.",
       "price": "62900000",
       "type": "macbook",
-      "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-16-digitalmat-gallery-1-202310?wid=364&hei=333&fmt=jpeg&qlt=95&.v=1696971483270",
+      "img": "https://www.apple.com/v/macbook-pro/aj/images/overview/contrast/product_tile_mbp_14_16__br3iijc0eys2_large.png",
       "technical": {
         "screen": "16.2 inch, 3456 x 2234 Pixels, OLED, 120, 1000 nits, Retina",
         "cameraBefore": "Chưa có thông tin",
@@ -192,6 +192,31 @@
         "CPU": "Apple, M2 Pro, 12-Core",
         "battery": "none"
       }
+    }
+  ],
+  "cart": [
+    {
+      "userid": "5",
+      "productid": "3",
+      "status": 1,
+      "product": {
+        "id": "3",
+        "name": "iPhone 14 128GB",
+        "desc": "Khoác lên kiểu dáng đặc trưng của dòng điện thoại iPhone, phiên bản iPhone 14 được cải tiến mạnh ở thời lượng pin và tập trung nâng cấp mạnh về camera nhằm đem đến những thước phim, khuôn hình đầy chất nghệ thuật và đạt chuẩn điện ảnh.Thiết kế đầy bản sắc, gọn gàng và thân thiệnTrên iPhone 14, bạn sẽ tìm thấy một kiểu dáng mang đậm bản sắc Apple với thân máy được hoàn thiện tỉ mỉ, chắc chắn mà vẫn nhẹ nhàng. Loại nhôm cấu tạo nên khung vỏ iPhone 14 được tuyển chọn kỹ lưỡng và là nguyên liệu cao cấp được ứng dụng phổ biến trong ngành hàng không.",
+        "price": "18490000",
+        "type": "iphone",
+        "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone14-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693086290654",
+        "technical": {
+          "screen": "6.1 inch, OLED, Super Retina XDR, 2532 x 1170 Pixels",
+          "cameraBefore": "12.0 MP + 12.0 MP",
+          "CameraSelfie": "12.0 MP",
+          "RAM": "6 GB",
+          "Memory": "128 GB",
+          "CPU": "Apple A15 Bionic",
+          "battery": "3279 mAh"
+        }
+      },
+      "id": 2
     }
   ]
 }

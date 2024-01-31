@@ -50,7 +50,7 @@ const Header = () => {
                </div>
 
                ${userName ? `<span class="tw-font-semibold">${userName}</span>` : `<a href="/signin" class="tw-text-black"><i class="fa-solid fa-user"></i></a>`}
-               <button><i class="fa-solid fa-bag-shopping"></i></button>
+               ${userName ? `<a class="text-dark" href="/cart"><i class="fa-solid fa-bag-shopping"></i></a>`: ""}
                ${userId ? `<button id="logout"><i class="fa-solid fa-right-from-bracket"></i></button>` : ""}
             </div>
         </Header>

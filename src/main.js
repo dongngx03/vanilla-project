@@ -9,6 +9,7 @@ import Detail from "./pages/member/Detail";
 import Iphone from "./pages/member/Iphone";
 import MacBook from "./pages/member/MacBook";
 import AddProduct from "./pages/admin/AddProduct";
+import Cart from "./pages/member/Cart";
 
 const app = document.getElementById('app');
 
@@ -32,6 +33,7 @@ const commonRoutes = () => {
 // member, admin, other
 if (permission === "Member") {
     commonRoutes()
+        .on('/cart', () => render(Cart, app))
         .notFound(() => render(NotFound, app))
         .resolve()
 }

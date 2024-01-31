@@ -5,7 +5,6 @@ import productApi from "@/services/productApi"
 
 const Home = () => {
   const [product, setProduct] = useState([]);
-  
   useEffect(() => {
       productApi.getAll()
         .then(res => setProduct(res.data))
@@ -164,6 +163,7 @@ const Home = () => {
         </div>
 
     </div>
+    
     
     ${Footer()}
   `

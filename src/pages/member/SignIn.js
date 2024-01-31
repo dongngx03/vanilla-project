@@ -62,6 +62,7 @@ const SignIn = () => {
                     })
                     .catch((res) => {
                         if (res?.response?.status === 400) {
+
                             Swal.fire({
                                 title: 'Lỗi',
                                 text: res?.response?.data,
@@ -71,7 +72,8 @@ const SignIn = () => {
                                 if (result.isConfirmed) {
                                     router.navigate('signin')
                                 }
-                            });
+                            })
+                            
                         }
                     })
             }

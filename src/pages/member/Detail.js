@@ -1,11 +1,12 @@
 import Footer from "@/components/member/Footer"
 import Header from "@/components/member/Header"
+import cartApi from "@/services/cartApi"
 import productApi from "@/services/productApi"
-import { useEffect, useState, formatNumberWithCommas } from "@/utilities"
+import { useEffect, useState, formatNumberWithCommas, alertCommon } from "@/utilities"
 
 
 const Detail = ({ data }) => {
-  const [product, setProduct] = useState('')
+  const [product, setProduct] = useState('');
   useEffect(() => {
     productApi.getDetail(data.id)
       .then(res => setProduct(res.data))
@@ -26,6 +27,56 @@ const Detail = ({ data }) => {
       infor.style.opacity = '1';
 
     }, 500)
+
+    // addCart 
+    document.querySelector('#addCart')
+      .addEventListener('click', (e) => {
+        e.preventDefault();
+        const userId = JSON.parse(sessionStorage.getItem('user'));
+        const productId = e.currentTarget.dataset.id;
+
+        if (userId) {
+          // check người dùng thêm sản phẩm này vaofo giỏ hay chưa 
+          cartApi.checkProductFromCart(userId?.user?.id, productId, 1)
+            .then(res => {
+              if (res.data.length === 0) {
+                cartApi.addCart({
+                  userid: String(userId?.user?.id),
+                  productid: String(productId),
+                  status: 1,
+                  product: product
+                })
+                  .then(res => {
+                    if (res.status === 201) {
+                      alertCommon(
+                        'Thành công',
+                        'Thêm vào giỏ thành công',
+                        'success',
+                        'Tiếp tục',
+                        () => window.location.href = "/cart"
+                      )
+                    }
+                  })
+              } else {
+                alertCommon(
+                  'Nhắc nhở',
+                  'Bạn đã thêm sản phẩm này vào giỏ hàng trước đó',
+                  'error',
+                  'Thoát',
+                )
+              }
+            })
+
+        } else {
+          alertCommon(
+            'Lỗi',
+            'Vui lòng đăng nhập để thực hiện chức năng',
+            'error',
+            'Đăng nhập',
+            () => window.location.href = "/signin"
+          )
+        }
+      })
   })
 
   const { id, name, desc, price, img, technical } = product;
@@ -44,8 +95,8 @@ const Detail = ({ data }) => {
               <div class="tw-w-full tw-h-auto tw-py-3 tw-flex tw-justify-between align-items-center">
                 <span class="tw-text-lg tw-font-medium tw-text-red-700">${formatNumberWithCommas(parseInt(price))} đ</span>
                 <div class="d-flex tw-gap-2">
-                  <button id="buy" data-id="${id}" class="tw-bg-[#0077ED] tw-text-white tw-w-[4rem] tw-h-[2.3rem] tw-font-semibold tw-rounded-full tw-shadow-md">Buy</button>
-                  <button data-id="${id}" class="tw-bg-black tw-text-white tw-w-[4rem] tw-h-[2.3rem] tw-font-semibold tw-rounded-full tw-shadow-md">Cart</button>
+                  <button id="buy" data-id="${id}" data-infor="${product}" class="tw-bg-[#0077ED] tw-text-white tw-w-[4rem] tw-h-[2.3rem] tw-font-semibold tw-rounded-full tw-shadow-md">Buy</button>
+                  <button id="addCart" data-id="${id}" class="tw-bg-black tw-text-white tw-w-[4rem] tw-h-[2.3rem] tw-font-semibold tw-rounded-full tw-shadow-md">Cart</button>
                 </div>
               </div>
               

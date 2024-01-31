@@ -1,5 +1,6 @@
 import Navigo from "navigo";
-const router = new Navigo("/", { linksSelector: "a" , hash: true});
+import Swal from "sweetalert2";
+const router = new Navigo("/", { linksSelector: "a", hash: true });
 
 
 let effects = [];
@@ -11,7 +12,7 @@ let rootContainer = null;
 let states = [];
 let currentStateOrder = 0;
 
-const debounce = (fn, timeout = 100) => { 
+const debounce = (fn, timeout = 100) => {
     let timeId = null;
 
     return (...rest) => {
@@ -97,7 +98,7 @@ const useEffect = (cb, deps) => {
     currentEffectOrder++;
 };
 
-router.on("/*", () => {}, {
+router.on("/*", () => { }, {
     before(done, match) {
         states = [];
         currentStateOrder = 0;
@@ -114,4 +115,20 @@ function formatNumberWithCommas(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
-export { render, useState, useEffect, router, formatNumberWithCommas };
+// custom alert from sweetalert
+function alertCommon(title, text, icon, confirmButtonText, callback) {
+    return Swal.fire({
+        title: title,
+        text: text,
+        icon: icon,
+        confirmButtonText: confirmButtonText,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (callback) {
+                callback();
+            }
+        }
+    })
+}
+
+export { render, useState, useEffect, router, formatNumberWithCommas, alertCommon };
