@@ -8,8 +8,9 @@ import SignUp from "./pages/member/SignUp";
 import Detail from "./pages/member/Detail";
 import Iphone from "./pages/member/Iphone";
 import MacBook from "./pages/member/MacBook";
-import AddProduct from "./pages/admin/AddProduct";
 import Cart from "./pages/member/Cart";
+import dashboard from "./pages/admin/dashboard";
+import ProductList from "./pages/admin/product/ProductList";
 
 const app = document.getElementById('app');
 
@@ -39,7 +40,8 @@ if (permission === "Member") {
 }
 else if (permission === "Admin") {
     commonRoutes()
-        .on('/admin/addproduct', () => render(AddProduct, app))
+        .on('/admin', () => render(dashboard, app))
+        .on('/admin/productlist', () => render(ProductList, app))
         .notFound(() => render(NotFound, app))
         .resolve()
 } 
