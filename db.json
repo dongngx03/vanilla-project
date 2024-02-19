@@ -194,29 +194,5 @@
       }
     }
   ],
-  "cart": [
-    {
-      "userid": "5",
-      "productid": "3",
-      "status": 1,
-      "product": {
-        "id": "3",
-        "name": "iPhone 14 128GB",
-        "desc": "Khoác lên kiểu dáng đặc trưng của dòng điện thoại iPhone, phiên bản iPhone 14 được cải tiến mạnh ở thời lượng pin và tập trung nâng cấp mạnh về camera nhằm đem đến những thước phim, khuôn hình đầy chất nghệ thuật và đạt chuẩn điện ảnh.Thiết kế đầy bản sắc, gọn gàng và thân thiệnTrên iPhone 14, bạn sẽ tìm thấy một kiểu dáng mang đậm bản sắc Apple với thân máy được hoàn thiện tỉ mỉ, chắc chắn mà vẫn nhẹ nhàng. Loại nhôm cấu tạo nên khung vỏ iPhone 14 được tuyển chọn kỹ lưỡng và là nguyên liệu cao cấp được ứng dụng phổ biến trong ngành hàng không.",
-        "price": "18490000",
-        "type": "iphone",
-        "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone14-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1693086290654",
-        "technical": {
-          "screen": "6.1 inch, OLED, Super Retina XDR, 2532 x 1170 Pixels",
-          "cameraBefore": "12.0 MP + 12.0 MP",
-          "CameraSelfie": "12.0 MP",
-          "RAM": "6 GB",
-          "Memory": "128 GB",
-          "CPU": "Apple A15 Bionic",
-          "battery": "3279 mAh"
-        }
-      },
-      "id": 2
-    }
-  ]
+  "cart": []
 }
