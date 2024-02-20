@@ -11,6 +11,8 @@ import MacBook from "./pages/member/MacBook";
 import Cart from "./pages/member/Cart";
 import dashboard from "./pages/admin/dashboard";
 import ProductList from "./pages/admin/product/ProductList";
+import UpdateProduct from "./pages/admin/product/UpdateProduct";
+import AddProduct from "./pages/admin/product/AddProduct";
 
 const app = document.getElementById('app');
 
@@ -42,9 +44,11 @@ else if (permission === "Admin") {
     commonRoutes()
         .on('/admin', () => render(dashboard, app))
         .on('/admin/productlist', () => render(ProductList, app))
+        .on('/admin/updateproduct/:id', (data) => render(() => UpdateProduct(data), app))
+        .on('/admin/addproduct', () => render(AddProduct, app))
         .notFound(() => render(NotFound, app))
         .resolve()
-} 
+}
 else {
     commonRoutes()
         .notFound(() => render(NotFound, app))

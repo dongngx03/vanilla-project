@@ -15,7 +15,7 @@ const Nav = () => {
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="/admin/productlist">Product list</a></li>
-                        <li><a class="dropdown-item" href="#">Add product</a></li>
+                        <li><a class="dropdown-item" href="/admin/addproduct">Add product</a></li>
                         <li><a class="dropdown-item" href="#">Product statistics</a></li>
                     </ul>
                 </div>  

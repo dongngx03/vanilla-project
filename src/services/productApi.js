@@ -19,6 +19,10 @@ const productApi = {
     remove(id) {
         const url = `product/${id}`
         return axiosClient.delete(url)
+    },
+    update(product, id) {
+        const url = `product/${id}`
+        return axiosClient.put(url, product)
     }
 }
 

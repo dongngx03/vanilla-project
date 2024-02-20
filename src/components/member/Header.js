@@ -4,11 +4,13 @@ import Swal from "sweetalert2"
 const Header = () => {
     const [userId, setUserId] = useState('');
     const [userName, setUserName] = useState('');
+    const [role, setRole] = useState('');
 
     
     useEffect(() => {
         const user = JSON.parse(sessionStorage.getItem('user'));
         //console.log(user);
+        setRole(user?.user?.permission)
         setUserId(user?.user?.id);
         setUserName(user?.user?.name);
     }, [])
@@ -48,7 +50,7 @@ const Header = () => {
                     <input type="text" class="tw-w-[15rem] tw-rounded-full tw-px-5"/>
                     <button class="tw-w-[2rem] tw-rounded-full tw-absolute tw-top-0 tw-right-1"><i class="fa-solid fa-magnifying-glass"></i></button>
                </div>
-
+               ${role === "Admin" ? `<a class="tw-text-black" href="/admin"><i class="fa-solid fa-gear"></i></a>` : ""}
                ${userName ? `<span class="tw-font-semibold">${userName}</span>` : `<a href="/signin" class="tw-text-black"><i class="fa-solid fa-user"></i></a>`}
                ${userName ? `<a class="text-dark" href="/cart"><i class="fa-solid fa-bag-shopping"></i></a>`: ""}
                ${userId ? `<button id="logout"><i class="fa-solid fa-right-from-bracket"></i></button>` : ""}

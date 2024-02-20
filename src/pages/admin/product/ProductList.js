@@ -1,10 +1,11 @@
 import Nav from "@/components/admin/Nav"
 import productApi from "@/services/productApi";
-import { useEffect, useState, formatNumberWithCommas } from "@/utilities"
+import { useEffect, useState, formatNumberWithCommas, router } from "@/utilities"
+import Swal from "sweetalert2";
 
 const ProductList = () => {
   const [productList, setProductList] = useState([]);
-  
+
   useEffect(() => {
     productApi.getAll()
       .then((res) => setProductList(res.data))
@@ -16,12 +17,21 @@ const ProductList = () => {
       removeItem.addEventListener('click', async (e) => {
         //console.log(e.currentTarget.dataset?.id);
         const id = e.currentTarget.dataset?.id;
+        Swal.fire({
+          title: 'Xác nhận',
+          text: "Bạn có chắc muốn xóa sản phẩm này ",
+          icon: 'question',
+          confirmButtonText: 'xác nhận',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            productApi.remove(id)
+              .then(() => {
+                router.navigate('/admin/productlist')
+              })
 
-        await productApi.remove(id)
-          .then(() => {
-            window.location.href = "/admin/productlist"
-          })
-        
+          }
+        })
+
       })
     })
   })
@@ -51,27 +61,26 @@ const ProductList = () => {
                 </tr>
               </thead>
               <tbody>
-                ${
-                  productList?.map((product, index) => {
-                    return /*html */`
+                ${productList?.map((product, index) => {
+    return /*html */`
                       <tr>
-                        <td>${index +1 }</td>
+                        <td>${index + 1}</td>
                         <td>${product?.name}</td>
                         <td>${formatNumberWithCommas(product?.price)} đ</td>
                         <td>
                           <img class="tw-w-[100px]" src="${product?.img}" />
-                        </td>
+                        </td> 
                         <td>
                           <a href="/detail/${product?.id}">Xem thêm</a>
                         </td>
                         <td class=" tw-justify-center align-items-center">
-                          <a class="btn btn-primary">Sửa</a>
+                          <a href="/admin/updateproduct/${product?.id}" class="btn btn-primary">Sửa</a>
                           <button data-id="${product?.id}" class="tw-text-red-500 remove">Xóa</button>
                         </td>
                       </tr>
                     `
-                  }).join("")
-                }
+  }).join("")
+    }
               </tbody>
             </table>
           </div>
